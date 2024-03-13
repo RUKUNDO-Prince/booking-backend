@@ -32,7 +32,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java?useSSH=false", "root", "");
 			PreparedStatement pst = con.prepareStatement("INSERT INTO users (name, password, email, mobile) VALUES (?, ?, ?, ?)");
 			pst.setString(1, name);
 			pst.setString(2, password);
@@ -43,9 +43,9 @@ public class RegistrationServlet extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("registration.jsp");
 			
 			if (rowCount > 0) {
-				request.setAttribute("status", "Success");
+				request.setAttribute("status", "success");
 			} else {
-				request.setAttribute("status", "Failed");
+				request.setAttribute("status", "failed");
 			}
 			
 			dispatcher.forward(request, response);
