@@ -85,7 +85,7 @@
 	<script type="text/javascript">
 		const status = document.getElementById("status").value;
 		if (status == "failed") {
-			swal("Sorry!", "Wrong Credentials!", "failed");
+			swal("Sorry!", "Wrong Credentials!", "error");
 		}
 	</script>
 	

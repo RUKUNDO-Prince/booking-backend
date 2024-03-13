@@ -44,6 +44,7 @@ public class RegistrationServlet extends HttpServlet {
 			
 			if (rowCount > 0) {
 				request.setAttribute("status", "success");
+				response.sendRedirect("login.jsp");
 			} else {
 				request.setAttribute("status", "failed");
 			}
