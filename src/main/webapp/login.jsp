@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Sign Up Form by Colorlib</title>
+<title>Login Here</title>
 
 <!-- Font Icon -->
 <link rel="stylesheet"
@@ -25,15 +25,14 @@
 			<div class="container">
 				<div class="signin-content">
 					<div class="signin-image">
+					<h1>Welcome Back</h1>
 						<figure>
-							<img src="images/signin-image.jpg" alt="sing up image">
+							<img src="images/login.jpg" alt="sing up image">
 						</figure>
-						<a href="registration.jsp" class="signup-image-link">Create an
-							account</a>
 					</div>
 
 					<div class="signin-form">
-						<h2 class="form-title">Sign up</h2>
+						<h2 class="form-title">Log In</h2>
 						<form method="post" action="login" class="register-form"
 							id="login-form">
 							<div class="form-group">
@@ -47,28 +46,12 @@
 									type="password" name="password" id="password"
 									placeholder="Password" />
 							</div>
-							<div class="form-group">
-								<input type="checkbox" name="remember-me" id="remember-me"
-									class="agree-term" /> <label for="remember-me"
-									class="label-agree-term"><span><span></span></span>Remember
-									me</label>
-							</div>
 							<div class="form-group form-button">
 								<input type="submit" name="signin" id="signin"
 									class="form-submit" value="Log in" />
 							</div>
 						</form>
-						<div class="social-login">
-							<span class="social-label">Or login with</span>
-							<ul class="socials">
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-google"></i></a></li>
-							</ul>
-						</div>
+						<a href="registration.jsp" class="signup-image-link" style="margin-top: 20px">Don't have an account? Create one!</a>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 package com.prince.registration;
 
-import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.RequestDispatcher; 
 import jakarta.servlet.ServletException; 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,10 +21,11 @@ public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
-		String mobile = request.getParameter("contact");
+		String account = request.getParameter("account");
 		
 		RequestDispatcher dispatcher = null;
 		
@@ -33,11 +34,12 @@ public class RegistrationServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java?useSSH=false", "root", "");
-			PreparedStatement pst = con.prepareStatement("INSERT INTO users (name, password, email, mobile) VALUES (?, ?, ?, ?)");
-			pst.setString(1, name);
-			pst.setString(2, password);
-			pst.setString(3, email);
-			pst.setString(4, mobile);
+			PreparedStatement pst = con.prepareStatement("INSERT INTO users (fname, lname, password, email, account) VALUES (?, ?, ?, ?)");
+			pst.setString(1, fname);
+			pst.setString(2, lname);
+			pst.setString(3, password);
+			pst.setString(4, email);
+			pst.setString(5, account);
 			
 			int rowCount = pst.executeUpdate();
 			dispatcher = request.getRequestDispatcher("registration.jsp");
